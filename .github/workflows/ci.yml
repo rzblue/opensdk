@@ -129,6 +129,12 @@ jobs:
               container: "",
               testable: true,
             },
+            {
+              os-cfg: linux_arm64,
+              runner: ubuntu-22.04-arm,
+              container: "",
+              testable: true,
+            }
           ]
     name: Build roborio-academic-cortexa9_vfpv3 for ${{ matrix.host.os-cfg }}
     runs-on: ${{ matrix.host.runner }}
@@ -143,6 +149,31 @@ jobs:
       - name: Prep MacOS
         if: contains(matrix.host.runner, 'macos')
         run: brew install rsync texinfo
+      - name: Prep Ubuntu arm64
+        if: matrix.host.os-cfg == 'linux_arm64'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tzdata \
+          bison \
+          crossbuild-essential-amd64 \
+          crossbuild-essential-riscv64 \
+          flex \
+          gawk \
+          libgmp-dev \
+          libisl-dev \
+          libmpc-dev \
+          libmpfr-dev \
+          m4 \
+          mingw-w64 \
+          python3-dev \
+          python3-pip \
+          python3-setuptools \
+          rsync \
+          strip-nondeterminism \
+          sudo \
+          texinfo \
+          wget \
+          zip
       - uses: actions/download-artifact@v4
         with:
           name: roborio-academic-cortexa9_vfpv3-sysroot
@@ -205,6 +236,12 @@ jobs:
               container: "",
               testable: true,
             },
+            {
+              os-cfg: linux_arm64,
+              runner: ubuntu-22.04-arm,
+              container: "",
+              testable: true,
+            }
           ]
     name: Build bookworm-armhf for ${{ matrix.host.os-cfg }}
     runs-on: ${{ matrix.host.runner }}
@@ -219,6 +256,31 @@ jobs:
       - name: Prep MacOS
         if: contains(matrix.host.runner, 'macos')
         run: brew install rsync texinfo
+      - name: Prep Ubuntu arm64
+        if: matrix.host.os-cfg == 'linux_arm64'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tzdata \
+          bison \
+          crossbuild-essential-amd64 \
+          crossbuild-essential-riscv64 \
+          flex \
+          gawk \
+          libgmp-dev \
+          libisl-dev \
+          libmpc-dev \
+          libmpfr-dev \
+          m4 \
+          mingw-w64 \
+          python3-dev \
+          python3-pip \
+          python3-setuptools \
+          rsync \
+          strip-nondeterminism \
+          sudo \
+          texinfo \
+          wget \
+          zip
       - uses: actions/download-artifact@v4
         with:
           name: bookworm-armhf-sysroot
@@ -275,6 +337,12 @@ jobs:
               container: "",
               testable: true,
             },
+            {
+              os-cfg: linux_arm64,
+              runner: ubuntu-22.04-arm,
+              container: "",
+              testable: true,
+            }
           ]
     name: Build bookworm-arm64 for ${{ matrix.host.os-cfg }}
     runs-on: ${{ matrix.host.runner }}
@@ -289,6 +357,31 @@ jobs:
       - name: Prep MacOS
         if: contains(matrix.host.runner, 'macos')
         run: brew install rsync texinfo
+      - name: Prep Ubuntu arm64
+        if: matrix.host.os-cfg == 'linux_arm64'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tzdata \
+          bison \
+          crossbuild-essential-amd64 \
+          crossbuild-essential-riscv64 \
+          flex \
+          gawk \
+          libgmp-dev \
+          libisl-dev \
+          libmpc-dev \
+          libmpfr-dev \
+          m4 \
+          mingw-w64 \
+          python3-dev \
+          python3-pip \
+          python3-setuptools \
+          rsync \
+          strip-nondeterminism \
+          sudo \
+          texinfo \
+          wget \
+          zip
       - uses: actions/download-artifact@v4
         with:
           name: bookworm-arm64-sysroot
@@ -345,6 +438,12 @@ jobs:
               container: "",
               testable: true,
             },
+            {
+              os-cfg: linux_arm64,
+              runner: ubuntu-22.04-arm,
+              container: "",
+              testable: true,
+            }
           ]
     name: Build raspi-bookworm-armhf for ${{ matrix.host.os-cfg }}
     runs-on: ${{ matrix.host.runner }}
@@ -359,6 +458,31 @@ jobs:
       - name: Prep MacOS
         if: contains(matrix.host.runner, 'macos')
         run: brew install rsync texinfo
+      - name: Prep Ubuntu arm64
+        if: matrix.host.os-cfg == 'linux_arm64'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tzdata \
+          bison \
+          crossbuild-essential-amd64 \
+          crossbuild-essential-riscv64 \
+          flex \
+          gawk \
+          libgmp-dev \
+          libisl-dev \
+          libmpc-dev \
+          libmpfr-dev \
+          m4 \
+          mingw-w64 \
+          python3-dev \
+          python3-pip \
+          python3-setuptools \
+          rsync \
+          strip-nondeterminism \
+          sudo \
+          texinfo \
+          wget \
+          zip
       - uses: actions/download-artifact@v4
         with:
           name: raspi-bookworm-armhf-sysroot
