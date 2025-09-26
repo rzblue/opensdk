@@ -12,4 +12,4 @@ env = Environment(loader=FileSystemLoader(workdir), autoescape=False, keep_trail
 template = env.get_template("ci.yml.jinja")
 contents = template.render(targets=targets)
 with open(path.join(workdir, "ci.yml"), "w") as f:
-    f.write(contents)
+    f.write(contents, newline='\n')
